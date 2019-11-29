@@ -11,14 +11,17 @@ public:
     //Constants used in some of the functions below
 #define AUTOMATIC 1
 #define MANUAL    0
-#define DIRECT  0
-#define REVERSE  1
-#define P_ON_M 0
-#define P_ON_E 1
+#define DIRECT    0
+#define REVERSE   1
+#define P_ON_M    0
+#define P_ON_E    1
 
-    //commonly used functions **************************************************************************
-    PID(double*, double*, double*,        // * constructor.  links the PID to the Input, Output, and
-        double, double, double, int, int);//   Setpoint.  Initial tuning parameters are also set here.
+    //commonly used functions 常用函数**************************************************************************
+    // 构造函数。将PID链接到输入、输出和定位点。这里还设置了初始调优参数。
+    // * constructor.  links the PID to the Input, Output, and Setpoint.  Initial tuning parameters are also set here.
+    PID(double* Input, double* Output, double* Setpoint,double Kp, double Ki, double Kd, int POn, int ControllerDirection)
+
+
     //   (overload for specifying proportional mode)
 
     PID(double*, double*, double*,        // * constructor.  links the PID to the Input, Output, and
